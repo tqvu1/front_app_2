@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Routes,
+  Switch,
   Route,
 } from "react-router-dom";
 import App from "../App";
@@ -8,11 +8,9 @@ import Home from "../components/Home";
 
 const AppRoutes: React.FC = () => {
   return (
-    <Routes>
-      <Route path="/" element={<App />}>
-        <Route index element={<Home />} />
-      </Route>
-    </Routes>
+    <Switch>
+      <Route path="/" component={Home} exact={true} key={999} />
+    </Switch>
   );
 }
 

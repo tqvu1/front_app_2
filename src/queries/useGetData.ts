@@ -5,16 +5,16 @@ import dataRepo from '../repositories/data';
 
 const useGetData = () => {
   const apiPath = '/user';
+  const defaultKey = [apiPath, 1, 'test'];
   const params = useQueryUrl<{ param1: string; param2: string }>();
 
   const queryGetData = useQuery<
     AxiosResponse<any>,
     AxiosError<any>
     >({
-    queryKey: [apiPath, params],
+    queryKey: [...defaultKey, params],
     queryFn: dataRepo.getData,
   });
-
   return {
     queryGetData
   }

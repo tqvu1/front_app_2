@@ -1,10 +1,21 @@
+import { TableProps } from "antd";
 import React from "react";
 import useGetData from "../../queries/useGetData";
+import { LoadingOutlined } from '@ant-design/icons';
 
-const Table: React.FC = () => {
+const useTable = () => {
   const { queryGetData } = useGetData();
   console.log(queryGetData);
-  return <div>Table</div>
+
+  const tableProps: TableProps<any> = {
+    loading: {
+      spinning: queryGetData.isFetching,
+      indicator: <LoadingOutlined />,
+    },
+    dataSource: queryGetData.data?.data?.data,
+  }
+
+  return tableProps;
 }
 
-export default Table;
+export default useTable;

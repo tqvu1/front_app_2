@@ -1,16 +1,16 @@
 import qs from "query-string";
 import React from "react";
-import {useNavigate} from "react-router-dom";
+import {useHistory} from "react-router";
+import useQueryUrl from "../../hooks/useQueryUrl";
 
 const Search: React.FC = () => {
-  const navigate = useNavigate();
+  const history = useHistory();
+  const query = useQueryUrl<{ name?: string }>();
   const handleSearch = () => {
-    navigate({
+    history.push({
       search: qs.stringify(
-        {
-          param1: 'test1',
-          param2: 'test2',
-        },
+        { ...query },
+        { skipNull: true, skipEmptyString: true },
       ),
     });
   };
