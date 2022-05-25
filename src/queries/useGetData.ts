@@ -4,7 +4,7 @@ import {AxiosError, AxiosResponse} from "axios";
 import dataRepo from '../repositories/data';
 
 const useGetData = () => {
-  const apiPath = '/help_me';
+  const apiPath = '/user';
   const params = useQueryUrl<{ param1: string; param2: string }>();
 
   const queryGetData = useQuery<

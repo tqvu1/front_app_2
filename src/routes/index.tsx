@@ -9,8 +9,8 @@ import Home from "../components/Home";
 const AppRoutes: React.FC = () => {
   return (
     <Routes>
-      <Route path="/app" element={<App />}>
-        <Route index element={<Home />} />≈
+      <Route path="/" element={<App />}>
+        <Route index element={<Home />} />
       </Route>
     </Routes>
   );

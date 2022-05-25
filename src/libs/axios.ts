@@ -6,7 +6,7 @@ import axiosBase, {
 
 const config: AxiosRequestConfig = {
   baseURL:
-    'http://localhost:3000',
+    'https://5e633910f48bc60014536a40.mockapi.io/api',
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
